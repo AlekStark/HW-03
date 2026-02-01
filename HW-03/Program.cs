@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Data;
-using System.Reflection.Metadata.Ecma335;
 using static System.Console;
 
 namespace HW_03
@@ -25,10 +23,10 @@ namespace HW_03
             try
             {
                 WriteLine("Укажите первое целое число");
-                string inputA = Console.ReadLine();
+                string inputA = ReadLine();
                 if(!int.TryParse(inputA, out int NumberOne))  /// проверяем корректность ввода иначе выбрасываем ошибку
                     throw new FormatException("Неверный формат первого числа.");
-                string inputB = Console.ReadLine();
+                string inputB = ReadLine();
                 if (!int.TryParse(inputB, out int NumberTwo)) /// проверяем корректность ввода иначе выбрасываем ошибку
                     throw new FormatException("Неверный формат второго числа.");
                 int result = calculator.Sum(NumberOne,NumberTwo);
@@ -41,7 +39,7 @@ namespace HW_03
             }
             finally
             {
-                Console.WriteLine("Завершение работы");
+                WriteLine("Завершение работы");
             }
         }
     }
