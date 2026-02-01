@@ -3,18 +3,6 @@ using static System.Console;
 
 namespace HW_03
 {
-    public interface ICalculator /// Интерфейс для калькулятора
-    {
-        int Sum(int a, int b);
-    }
-
-    public class Calculator() : ICalculator  ///Калькулятор на вход принимаем только целые числа (для добных нужно переделать на double)
-    {
-        public int Sum(int a, int b)
-        {
-            return a + b;
-        }
-    }
     class Program
     {
         static void Main(string[] args)
@@ -30,7 +18,7 @@ namespace HW_03
                 if (!int.TryParse(inputB, out int NumberTwo)) /// проверяем корректность ввода иначе выбрасываем ошибку
                     throw new FormatException("Неверный формат второго числа.");
                 int result = calculator.Sum(NumberOne,NumberTwo);
-                Console.WriteLine(result);
+                WriteLine(result);
 
             }
             catch (FormatException ex) /// Исключение по формату (принимаем только целые чиста)
